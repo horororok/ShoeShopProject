@@ -33,7 +33,7 @@ function App() {
           <Navbar.Brand href="#home">Project X</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/detail">Features</Nav.Link>
+            <Nav.Link href="/cart">Cart</Nav.Link>
             <Nav.Link onClick={() => { navigate('/detail') }}>Detail</Nav.Link>
           </Nav>
         </Container>
@@ -41,7 +41,7 @@ function App() {
 
       <Link to="/">홈</Link>
       <Link to="/detail">  상세 페이지</Link>
-
+      <Link to="/cart"> 장바구니</Link>
 
 
 
@@ -88,13 +88,14 @@ function App() {
           <Route path = "one" element = {<div>첫 주문시 양배추즙 서비스</div>}/>
           <Route path = "two" element = {<div>생일기념 쿠폰받기</div>}/>
         </Route>
+        <Route path = "/cart" element={<Cart/> }/>
+
+
+
+
 
 
         <Route path="*" element={<div>없는 페이지</div>} />
-
-        <Route path = "/cart" element={<Cart/> }/>
-        
-        
 
       </Routes>
 

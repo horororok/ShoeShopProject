@@ -2,9 +2,12 @@ import { useParams } from 'react-router-dom'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Nav } from 'react-bootstrap';
-
+import { addItem } from '../store';
+import { useDispatch } from 'react-redux';
 
 function Detail(props) {
+
+    let dispatch = useDispatch()
 
     let [fadei, setFadei] = useState('')
     useEffect(()=>{
@@ -61,7 +64,10 @@ function Detail(props) {
                     <h4 className="pt-5">{찾은상품.title}</h4>
                     <p>{찾은상품.content}</p>
                     <p>{찾은상품.price}</p>
-                    <button className="btn btn-danger">주문하기</button>
+                    <button className="btn btn-danger" onClick={()=>{
+                        //현재 페이지에 있는 id, name, 가지고 오도록 만들기
+                        dispatch(addItem({id : 1, name : 'Red Knit', count : 1}))
+                    }}>주문하기</button>
                 </div>
             </div>
 
