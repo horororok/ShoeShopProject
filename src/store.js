@@ -1,18 +1,12 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 
+import user from "./store/userSlice"
+
 //useState와 비슷
 //state 하나를 슬라이스라 부름
-let user = createSlice({
-    name: 'user',
-    initialState: 'Kim',
-    reducers : {
-        changeName(state){
-            return 'john '+ state
-        }
-    }
-})
 
-export let {changeName} = user.actions
+
+
 
 
 let stock = createSlice({

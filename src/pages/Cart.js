@@ -1,6 +1,7 @@
 import { Table } from "react-bootstrap"
 import { useSelector, useDispatch } from "react-redux"
-import { changeName } from "../store"
+import { changeName , increaseAge} from "./../store/userSlice.js"
+ 
 
 
 function Cart() {
@@ -10,13 +11,14 @@ function Cart() {
     //store 안에 있던 모든 state 안쓰려면 .user 해ㅐ줌
     // let a = useSelector((state)=>{return state})
     // let a = useSelector((state)=>{return state.stock})
-    let state = useSelector((state) => { return state })
+    let state = useSelector((state) => state )
 
     let dispatch = useDispatch()
     console.log(state.cart)
     return (
         <div>
-            {state.user}의 장바구니
+            <h6>{state.user.age} {state.user.name}의 장바구니</h6>
+            <button onClick={()=>{dispatch(increaseAge(10))}}>더하기</button>
             <Table>
                 <thead>
                     <tr>
@@ -50,7 +52,7 @@ function Cart() {
 
                     {
                         state.cart.map((a, i) => {
-                            return <tr key={i}>
+                            return <tr key={'userlist ' + i}>
                                 <td>1</td>
                                 <td>{state.cart[i].name}</td>
                                 <td>{state.cart[i].count}</td>
