@@ -16,6 +16,12 @@ import Cart from "./pages/Cart.js"
 
 function App() {
 
+  //이미 watched 항목이 있으면 setItem 하지 말아주세요 기능 추가해보기
+  useEffect(()=>{
+    localStorage.setItem('watched', JSON.stringify([]))
+  }, [])
+
+
   let [shoes] = useState(data)
 
   let navigate = useNavigate();
