@@ -22,7 +22,7 @@ let cart = createSlice({
     ],
     reducers : {
         addCount(state, action){
-            let 번호 = state.findIndex((a)=>{return a.id == action.payload})
+            let 번호 = state.findIndex((a)=>{return a.id === action.payload})
             // state[action.payload].count++
             state[번호].count++
         },

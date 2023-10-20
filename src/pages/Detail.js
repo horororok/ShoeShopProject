@@ -24,7 +24,6 @@ function Detail(props) {
 
     //localstorage로 만드는 최근본 상품
     useEffect(()=>{
-        찾은상품.id
         let 꺼낸거 = localStorage.getItem('watched')
         꺼낸거 = JSON.parse(꺼낸거)
         꺼낸거.push(찾은상품.id)
